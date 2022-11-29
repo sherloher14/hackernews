@@ -1,0 +1,12 @@
+build:
+  ivanjvrhackernews:
+    image: okteto.dev/ivanjvrhackernews:latest
+
+deploy:
+  - okteto build # build the image with the latest code
+  - kubectl apply -f manifests # create all the resources in kubernetes
+dev:
+  ivanjvrhackernews:
+    command: bash
+    sync:
+    - .:/hackernews
