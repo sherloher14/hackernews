@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ivanjvrhackernews-config
+  labels:
+    app: postgres
+data:
+  DEV_SECRET_KEY: x6!lh50149cma+ca4d+dp0#h7ffqznkj6z0tno35!h@@&mcvzd
+  DEV_DATABASE: aoridnsw
+  DEV_USER: aoridnsw
+  DEV_PASSWORD: Kv-Y7fOaOV2K2rIScY2kkPmehmmDEakL
+  DEV_HOST: heffalump.db.elephantsql.com
+  DEV_PORT: "5432"
