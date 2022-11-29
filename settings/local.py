@@ -11,16 +11,22 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#FIXTURE_DIRS = [
+#    os.path.join(BASE_DIR, 'fixtures'),
+#]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x6!lh50149cma+ca4d+dp0#h7ffqznkj6z0tno35!h@@&mcvzd'
+
+SECRET_KEY = config("DEV_SECRET_KEY", default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +37,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'health_check',   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,12 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'links',
-    'ai',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -78,17 +82,20 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DEV_DATABASE = config("DEV_DATABASE", default='')
+DEV_USER = config("DEV_USER", default='')
+DEV_PASSWORD = config("DEV_PASSWORD", default='')
+DEV_HOST = config("DEV_HOST", default='')
+DEV_PORT = config("DEV_PORT", default=5432)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hackernews',
-        'USER': 'postgres',
-        'PASSWORD' : 'wilde-1234',
-        # 'PASSWORD': 'Kv-Y7fOaOV2K2rIScY2kkPmehmmDEakL',
-        'HOST' : 'localhost',
-        # 'HOST': 'heffalump.db.elephantsql.com',
-        'PORT': 5432,
+        'NAME': DEV_DATABASE,
+        'USER': DEV_USER,
+        'PASSWORD': DEV_PASSWORD,
+        'HOST': DEV_HOST,
+        'PORT': DEV_PORT,
     }
 }
 
@@ -142,5 +149,3 @@ AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
-
-CORS_ORIGIN_ALLOW_ALL = True
