@@ -3,8 +3,12 @@ django-filter==2.4.0
 django-graphql-jwt==0.3.1
 PyJWT==1.7.1
 graphene-django==2.13.0
-psycopg2-binary==2.8.6
+psycopg2-binary==2.9.3
 django-cors-headers==3.5.0
 coverage
 mixer
 python-decouple
+requests
+pillow
+numpy
+django-health-check
