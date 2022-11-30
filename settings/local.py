@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config("DEV_SECRET_KEY", default='')
+SECRET_KEY = config("DEV_SECRET_KEY", default='x6!lh50149cma+ca4d+dp0#h7ffqznkj6z0tno35!h@@&mcvzd')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'links',
+    'ai',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -82,10 +85,10 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DEV_DATABASE = config("DEV_DATABASE", default='')
-DEV_USER = config("DEV_USER", default='')
-DEV_PASSWORD = config("DEV_PASSWORD", default='')
-DEV_HOST = config("DEV_HOST", default='')
+DEV_DATABASE = config("DEV_DATABASE", default='aoridnsw')
+DEV_USER = config("DEV_USER", default='aoridnsw')
+DEV_PASSWORD = config("DEV_PASSWORD", default='9S2AudYBzLqMHiu8S9o1u12_r7kZpxpN')
+DEV_HOST = config("DEV_HOST", default='heffalump.db.elephantsql.com')
 DEV_PORT = config("DEV_PORT", default=5432)
 
 DATABASES = {
@@ -149,3 +152,5 @@ AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
