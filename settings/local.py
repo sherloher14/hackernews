@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'links',
     'ai',
+    'componentes',
     'corsheaders',
 ]
 
