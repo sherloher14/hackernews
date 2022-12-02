@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DEV_DATABASE = config("DEV_DATABASE", default='aoridnsw')
-DEV_USER = config("DEV_USER", default='aoridnsw')
-DEV_PASSWORD = config("DEV_PASSWORD", default='9S2AudYBzLqMHiu8S9o1u12_r7kZpxpN')
-DEV_HOST = config("DEV_HOST", default='heffalump.db.elephantsql.com')
+DEV_DATABASE = config("DEV_DATABASE", default='muovsfvr')
+DEV_USER = config("DEV_USER", default='muovsfvr')
+DEV_PASSWORD = config("DEV_PASSWORD", default='fECHTho_BgaL7gUFUpYYSlvmAa10EFDe')
+DEV_HOST = config("DEV_HOST", default='peanut.db.elephantsql.com')
 DEV_PORT = config("DEV_PORT", default=5432)
 
 DATABASES = {
