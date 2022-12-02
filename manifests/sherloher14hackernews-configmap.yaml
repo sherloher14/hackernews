@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sherloher14hackernews-config
+  labels:
+    app: postgres
+data:
+  DEV_SECRET_KEY: x6!lh50149cma+ca4d+dp0#h7ffqznkj6z0tno35!h@@&mcvzd
+  DEV_DATABASE: muovsfvr
+  DEV_USER: muovsfvr
+  DEV_PASSWORD: fECHTho_BgaL7gUFUpYYSlvmAa10EFDe
+  DEV_HOST: peanut.db.elephantsql.com
+  DEV_PORT: "5432"
