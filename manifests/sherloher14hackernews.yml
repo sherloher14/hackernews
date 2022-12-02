@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ivanjvrhackernews
+  name: sherloher14hackernews
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ivanjvrhackernews
+      app: sherloher14hackernews
   template:
     metadata:
       labels:
-        app: ivanjvrhackernews
+        app: sherloher14hackernews
     spec:
       containers:
-      - image: okteto.dev/ivanjvrhackernews:latest
-        name: ivanjvrhackernews
+      - image: okteto.dev/sherloher14hackernews:latest
+        name: sherloher14hackernews
         envFrom:
         - configMapRef:
-            name: ivanjvrhackernews-config
+            name: sherloher14hackernews-config
         livenessProbe:
           httpGet:
             path: /ht/
@@ -29,13 +29,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ivanjvrhackernews
+  name: sherloher14hackernews
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "ivanjvrhackernews"
+  - name: "sherloher14hackernews"
     port: 8080
   selector:
-    app: ivanjvrhackernews
+    app: sherloher14hackernews
